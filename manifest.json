@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "KO Countdown",
+  "version": "0.0.1",
+  "description": "The countdown timer that will knock your brain out",
+  "author": "Adda Kridler, Hasan Ozutemiz",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "alarms"],
+  "action": {
+    "default_popup" : "popup.html",
+    "default_icon" : {
+      "128" : "knock-out-logo.png"
+    }
+  },
+  "icons" : {
+    "128": "knock-out-logo.png"
+  }
+}
