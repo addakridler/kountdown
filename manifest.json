@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "KO Countdown",
+  "name": "komodoro",
   "version": "0.0.1",
-  "description": "The countdown timer that will knock your brain out",
+  "description": "The komodoro timer that will drive you bananas",
   "author": "Adda Kridler, Hasan Ozutemiz",
   "background": {
     "service_worker": "background.js"
@@ -11,10 +11,10 @@
   "action": {
     "default_popup" : "popup.html",
     "default_icon" : {
-      "128" : "knock-out-logo.png"
+      "128" : "komodoro.png"
     }
   },
   "icons" : {
-    "128": "knock-out-logo.png"
+    "128": "komodoro.png"
   }
 }

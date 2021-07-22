@@ -5,8 +5,9 @@ const startButton = document.getElementById("toggleAlarm");
 let newAlarm = "newAlarm"
 let alarmOn = false;
 //function that will checkAlarm - if no alarm started, start one; otherwise end current alarm
-const checkAlarm = () => {
-  if (alarmOn === false) {
+const checkAlarm = async () => {
+  const timeCheck = await checkTime();
+  if (alarmOn === false && timeCheck === true) {
     createAlarm();
   }
   else {
@@ -14,6 +15,28 @@ const checkAlarm = () => {
     endAlarm();
   }
 };
+
+const checkTime = () => {
+  //get current Date and convert to hours and mins
+  const nowDate = new Date;
+  const nowHours = nowDate.getHours();
+  const nowMins = nowDate.getMinutes();
+  //get startTime and endTime and convert to hours and mins
+  const startTime = document.getElementById("startTime").value;
+  const endTime = document.getElementById("endTime").value;
+  const startHours = Number(startTime.slice(0, 2));
+  const startMins = Number(startTime.slice(3));
+  const endHours = Number(endTime.slice(0, 2));
+  const endMins = Number(endTime.slice(3));
+  //if current date is within start/end params, create alarm
+  if (((nowHours === startHours && nowMins >= startMins) ||
+      (nowHours > startHours)) && ((nowHours < endHours) || 
+      (nowHours === endHours && nowMins < endMins))) {
+        return true;
+      }
+  //otherwise return
+  return false;
+}
 
 //function to create and start an alarm
 const createAlarm = () => {

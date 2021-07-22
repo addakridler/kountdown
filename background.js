@@ -9,7 +9,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
   //console.log("Got an alarm!", alarm);
   // alert("!!! It is break time !!!");
   let bananaTime = new Audio ("BANANA.mp3");
-  bananaTime.onplaying = () => alert("!!! It is break time !!!");
+  //bananaTime.onplaying = () => alert("!!! It is BANANA time !!!");
   bananaTime.play();
 });
 
